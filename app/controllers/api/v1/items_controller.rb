@@ -6,7 +6,7 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def show
-        item = Item.find(item_params)
+        item = Item.find(params[:id])
         render json: item
     end
 
@@ -16,15 +16,21 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def update
+        item = Item.find(params[:id])
+        item.update!(item_params)
+        render json: item
     end
 
     def destroy 
+        item = Item.find(params[:id])
+        item.destroy
+        render json: item
     end
 
     private
 
     def item_params
-        params.require(:item).permit(:name, :image, :description, :price, :category)
+        params.require(:item).permit(:name, :image, :description, :price, :category, :user_id)
     end
     
 end

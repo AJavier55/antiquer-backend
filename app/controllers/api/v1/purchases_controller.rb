@@ -6,7 +6,7 @@ class Api::V1::PurchasesController < ApplicationController
     end
 
     def show
-        purchase = Purchase.find(purchase_params)
+        purchase = Purchase.find(params[:id])
         render json: purchase
     end
 
@@ -16,9 +16,15 @@ class Api::V1::PurchasesController < ApplicationController
     end
 
     def update
+        purchase = Purchase.find(params[:id])
+        purchase.update!(purchase_params)
+        render json: purchase
     end
 
     def destroy
+        purchase = Purchase.find(params[:id])
+        purchase.destroy
+        render json: purchase
     end
 
     private
