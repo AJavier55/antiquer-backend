@@ -21,7 +21,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'activestorage', '~> 6.0.3.4'
 gem "jwt", "~> 2.2"
 
-gem "active_model_serializers", "~> 0.10.10"
+# gem "active_model_serializers", "~> 0.10.10"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
