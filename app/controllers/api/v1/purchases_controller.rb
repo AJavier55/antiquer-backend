@@ -1,4 +1,4 @@
-class PurchasesController < ApplicationController
+class Api::V1::PurchasesController < ApplicationController
 
     def index
         purchases = Purchase.all
@@ -30,7 +30,7 @@ class PurchasesController < ApplicationController
     private
 
     def purchase_params
-        params.require(:purchase).permit(:quantity, :user_id, :item_id)
+        params.require(:purchase).permit(:quantity, :user_id, :item_id, :quantityAvailable, :sold)
     end
     
 end

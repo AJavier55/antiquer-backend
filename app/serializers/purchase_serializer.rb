@@ -1,3 +1,3 @@
-class PurchaseSerializer < ActiveModel::Serializer
+# class PurchaseSerializer < ActiveModel::Serializer
   
-end
+# end

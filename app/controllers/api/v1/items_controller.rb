@@ -1,10 +1,10 @@
-class ItemsController < ApplicationController
+class Api::V1::ItemsController < ApplicationController
 
     def index
         items = Item.all
         render json: items
     end
-
+   
     def show
         item = Item.find(params[:id])
         render json: item
@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
 
     def create
         item = Item.create(item_params)
-        render json: item
     end
 
     def update
@@ -30,7 +29,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-        params.require(:item).permit!
+        params.require(:item).permit(:name, :image, :description, :category, :user_id, :price, :quantity)
     end
     
 end
