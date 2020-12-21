@@ -1,4 +1,4 @@
-class Api::V1::PurchasesController < ApplicationController
+class PurchasesController < ApplicationController
 
     def index
         purchases = Purchase.all
